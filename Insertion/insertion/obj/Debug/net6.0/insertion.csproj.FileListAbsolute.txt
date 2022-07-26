@@ -1,0 +1,15 @@
+/home/alvaro/CS-Works/Proyectos/SortsAlgorithms/Insertion/insertion/bin/Debug/net6.0/insertion
+/home/alvaro/CS-Works/Proyectos/SortsAlgorithms/Insertion/insertion/bin/Debug/net6.0/insertion.deps.json
+/home/alvaro/CS-Works/Proyectos/SortsAlgorithms/Insertion/insertion/bin/Debug/net6.0/insertion.runtimeconfig.json
+/home/alvaro/CS-Works/Proyectos/SortsAlgorithms/Insertion/insertion/bin/Debug/net6.0/insertion.dll
+/home/alvaro/CS-Works/Proyectos/SortsAlgorithms/Insertion/insertion/bin/Debug/net6.0/insertion.pdb
+/home/alvaro/CS-Works/Proyectos/SortsAlgorithms/Insertion/insertion/obj/Debug/net6.0/insertion.csproj.AssemblyReference.cache
+/home/alvaro/CS-Works/Proyectos/SortsAlgorithms/Insertion/insertion/obj/Debug/net6.0/insertion.GeneratedMSBuildEditorConfig.editorconfig
+/home/alvaro/CS-Works/Proyectos/SortsAlgorithms/Insertion/insertion/obj/Debug/net6.0/insertion.AssemblyInfoInputs.cache
+/home/alvaro/CS-Works/Proyectos/SortsAlgorithms/Insertion/insertion/obj/Debug/net6.0/insertion.AssemblyInfo.cs
+/home/alvaro/CS-Works/Proyectos/SortsAlgorithms/Insertion/insertion/obj/Debug/net6.0/insertion.csproj.CoreCompileInputs.cache
+/home/alvaro/CS-Works/Proyectos/SortsAlgorithms/Insertion/insertion/obj/Debug/net6.0/insertion.dll
+/home/alvaro/CS-Works/Proyectos/SortsAlgorithms/Insertion/insertion/obj/Debug/net6.0/refint/insertion.dll
+/home/alvaro/CS-Works/Proyectos/SortsAlgorithms/Insertion/insertion/obj/Debug/net6.0/insertion.pdb
+/home/alvaro/CS-Works/Proyectos/SortsAlgorithms/Insertion/insertion/obj/Debug/net6.0/insertion.genruntimeconfig.cache
+/home/alvaro/CS-Works/Proyectos/SortsAlgorithms/Insertion/insertion/obj/Debug/net6.0/ref/insertion.dll
