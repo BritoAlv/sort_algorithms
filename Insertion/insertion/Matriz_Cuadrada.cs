@@ -2,10 +2,11 @@ public class Matriz_Cuadrada : IComparable<Matriz_Cuadrada>
 {
     public readonly int lado;
     int[,] matriz;
-    public Matriz_Cuadrada(int lado)
+    public Matriz_Cuadrada(int lado = -1)
     {
         Random Azar = new Random();
         this.lado = lado;
+        if(lado == -1)this.lado = Random.Next(5);//Matrices hasta de tamanho 5, esto es ajustable pero tuve miedo que pa matrices muy grandes StackOverflow will occur
         this.matriz = new int[this.lado, this.lado];
         for(int i = 0; i < this.lado; i++)
             for(int j = 0; j < this.lado; j++)
