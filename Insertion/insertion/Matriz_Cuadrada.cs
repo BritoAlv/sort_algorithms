@@ -20,6 +20,12 @@ public class Matriz_Cuadrada : IComparable<Matriz_Cuadrada>
             for (int j = 0; j < this.lado; j++)
                 this.matriz[i, j] = matriz[i, j];
     }
+    public static GetRandomArray(int size)
+    {
+        Matriz_Cuadrada[] A = new Matriz_Cuadrada[size];
+        for (int i = 0; i < A.Length; A[i++] = new Matriz_Cuadrada());
+        return A;
+    }
     public int CompareTo(Matriz_Cuadrada other)
     {
         return this.Determinante - other.Determinante;
