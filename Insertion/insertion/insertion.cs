@@ -20,6 +20,22 @@ public static class insertion_sort
             }
         }
     }
+    public static void swaps_2<T>(T[] source) where T : IComparable<T>
+    //Esto significa que este metodo funcionara para todo tipo T tal que implemente el metodo CompareTo() con objetos de su mismo tipo
+    {
+        for (int i = 1; i < source.Length; i++)
+        {
+            int j = i;
+            while((j > 0) && (source[j-1].CompareTo(source[j]) > 0))
+            //Por convenio, decir que a.CompareTo(b) > 0 es analogo a decir a > b 
+            {                
+                T temp = source[j-1];
+                source[j-1] = source[j];
+                source[j] = temp;
+                j--;
+            }
+        }
+    }
 
     public static void binary_search_0(int[] source)
     {
