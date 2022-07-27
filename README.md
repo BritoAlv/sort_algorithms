@@ -1,11 +1,11 @@
 # sort_insertion
 Understand how insertion sort works.
-Por ahora: 
 
-- Lo que me hace falta por ahora es que en la carpeta insertion, en el archivo insertion estoy haciendo el algoritmo, pero lo hice para int (no se como es general), necesito que al que se llama swaps_0 le hagas una versión swaps_2 que pinche para cualquier estructura que se pueda comparar o sea no solo restringido para int.
+Cosas que faltan: 
 
-- Lo otro es que necesito una estructura que cumpla que comparar elementos no sea operación constante, que sea ineficiente, con un generador de elementos random de esa estructura en un array.
+Aparentemente ya tengo el código necesario para hacer el benchmark en los diferentes casos, por lo que pasamos ahora a la siguiente stage, como graficar los resultados obtenidos, nos hace falta una manera automática de leer el archivo csv (es una tabla que tiene la info) y hacer dos gráficos, ambos tienen en el eje x los parámetros 10,100,1000, .... y en el eje y uno tiene el tiempo consumido y el otro tiene la memoria consumida. 
 
-Movi para la carpeta de benchmark las dos funciones que hice para hacer el benchamakr, cuando es el insertion sort, y cuando es con binary search, y lo otro que cambie fue que le cambie el nombre a las funciones de sort_swap a swap,
+- revisar e intentar optimizar más el código.
+- hacer los plots.
+- completar el pdf
 
-Revisa la binary search por si se puede optimizar, que no me quedo muy bien
