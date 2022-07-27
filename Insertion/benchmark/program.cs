@@ -1,5 +1,7 @@
 ﻿using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Running;
+
+[MemoryDiagnoser]
 public class benchmark
 {
     public int[] array_to_sort0;
