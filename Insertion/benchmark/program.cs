@@ -1,6 +1,28 @@
 ﻿using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Running;
+using BenchmarkDotNet.Configs;
+using BenchmarkDotNet.Exporters.Csv;
+using BenchmarkDotNet.Reports;
+using BenchmarkDotNet.Columns;
 
+public class config : ManualConfig
+{
+    public CsvExporter exporter = new CsvExporter(
+    CsvSeparator.CurrentCulture,
+    new SummaryStyle(
+        cultureInfo: System.Globalization.CultureInfo.CurrentCulture,
+        printUnitsInHeader: true,
+        printUnitsInContent: false,
+        timeUnit: Perfolizer.Horology.TimeUnit.Microsecond,
+        sizeUnit: SizeUnit.B
+    ));
+    public config()
+    {
+        AddExporter(exporter);
+    }
+}
+
+[Config(typeof(config))]
 [MemoryDiagnoser]
 public class benchmark
 {
@@ -8,7 +30,7 @@ public class benchmark
     public matriz_cuadrada[] array_to_sort1;
     public int[] container0;
     public matriz_cuadrada[] container1;
-    [Params(100)]
+    [Params(1000,2000,3000,4000,5000,6000,7000,8000,9000,10000)]
     public int size {get; set ;}
     [GlobalSetup]
     public void Setup()
@@ -18,15 +40,17 @@ public class benchmark
         array_to_sort1 = matriz_cuadrada.generate_array(size);
         container1 = new matriz_cuadrada[size];
     }
+    
     [Benchmark]
-    public void swap_3() => insertion_sort_benchmark.swaps_3(array_to_sort1, container1);
+    public void binary_search_1() => insertion_sort_benchmark.binary_search_1(array_to_sort0, container0);
+/*
     [Benchmark]
     public void binary_search_3() => insertion_sort_benchmark.binary_search_3(array_to_sort1, container1);
-  [Benchmark]
+    [Benchmark]
     public void swap_1() => insertion_sort_benchmark.swaps_1(array_to_sort0, container0);
     [Benchmark]
     public void binary_search_1() => insertion_sort_benchmark.binary_search_1(array_to_sort0, container0);    
-
+*/
 }
 public static class program
 {
@@ -48,3 +72,4 @@ public static class program
 
     }
 }
+

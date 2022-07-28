@@ -5423,11 +5423,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/alvaro/CS-Works/Proyectos/SortsAlgorithms/Insertion/benchmark/benchmark.csproj",
+      "projectUniqueName": "/home/alvaro/CS-Works/Proyectos/SortsAlgorithms/sort_insertion/Insertion/benchmark/benchmark.csproj",
       "projectName": "benchmark",
-      "projectPath": "/home/alvaro/CS-Works/Proyectos/SortsAlgorithms/Insertion/benchmark/benchmark.csproj",
+      "projectPath": "/home/alvaro/CS-Works/Proyectos/SortsAlgorithms/sort_insertion/Insertion/benchmark/benchmark.csproj",
       "packagesPath": "/home/alvaro/.nuget/packages/",
-      "outputPath": "/home/alvaro/CS-Works/Proyectos/SortsAlgorithms/Insertion/benchmark/obj/",
+      "outputPath": "/home/alvaro/CS-Works/Proyectos/SortsAlgorithms/sort_insertion/Insertion/benchmark/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/alvaro/.nuget/NuGet/NuGet.Config"
