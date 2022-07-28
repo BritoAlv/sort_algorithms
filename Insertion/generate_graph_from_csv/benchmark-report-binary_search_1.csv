@@ -1,0 +1,11 @@
+,Method,Tamaño,Microsegundos,BytesMemoria
+0,binary_search_1,1000,253.0,-
+1,binary_search_1,2000,894.5,1
+2,binary_search_1,3000,1883.9,2
+3,binary_search_1,4000,3268.4,3
+4,binary_search_1,5000,4953.0,6
+5,binary_search_1,6000,7006.6,6
+6,binary_search_1,7000,9640.7,13
+7,binary_search_1,8000,12452.8,13
+8,binary_search_1,9000,15826.0,26
+9,binary_search_1,10000,19451.3,26
