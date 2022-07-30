@@ -60,7 +60,7 @@ public class matriz_cuadrada : IComparable<matriz_cuadrada>
         string s = "";
         for (int i = 0; i < lado; i++)
         {
-            for (int j = 0; j < lado; s += this.matriz[i, j++]);
+            for (int j = 0; j < lado; s += " " + this.matriz[i, j++]);
             s += "\n";
         }
         return s;

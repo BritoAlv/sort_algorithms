@@ -12,7 +12,8 @@ public static class insertion_sort_benchmark
             // source[i] in that array, keeping it sorted.
             while((j > 0) && (insert[j-1] > insert[j]) ) 
             // has to go from i-1 to 0, checking, in each check, it compares and after that do the swap.
-            {                
+            {   
+                // there is no pointers here so ...             
                 int temp = insert[j-1];
                 insert[j-1] = insert[j];
                 insert[j] = temp;
