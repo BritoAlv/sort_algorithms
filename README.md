@@ -9,3 +9,5 @@
 (binary_search es usada aquí).
 
 Leer el pdf con todo el contenido.
+
+apt install libc6/stretch libc6-dev/stretch libc-dev-bin/stretch libc-bin/stretch locales/stretch sudo/stretch
