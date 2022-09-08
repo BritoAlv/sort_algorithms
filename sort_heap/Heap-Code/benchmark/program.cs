@@ -1,4 +1,4 @@
-﻿using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Running;
 using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Exporters.Csv;
@@ -26,23 +26,23 @@ public class config : ManualConfig
 [MemoryDiagnoser]
 public class benchmark
 {
-    public List<int> list_to_sort0;
+    public int[] list_to_sort0;
     // public matriz_cuadrada[] array_to_sort1;
-    public List<int> container0;
+    public int[] container0;
     // public matriz_cuadrada[] container1;
-    [Params(10000,100000)]
+    [Params(10000,100000, 200000, 1000000)]
     public int size {get; set ;}
     [GlobalSetup]
     public void Setup()
     {
-        list_to_sort0 = random_utils.generate_array(size).ToList();
-        container0 = (new int[size]).ToList(); 
+        list_to_sort0 = random_utils.generate_array(size);
+        container0 = (new int[size]); 
         //array_to_sort1 = matriz_cuadrada.generate_array(size);
         //container1 = new matriz_cuadrada[size];
     }
     
     [Benchmark]
-    public void merge_1() => merge_sort_benchmark.basic_1(list_to_sort0, container0, 0, list_to_sort0.Count-1);
+    public void heap_1() => heap_sort_benchmark.basic_1(list_to_sort0, container0);
 }
 public static class program
 {
