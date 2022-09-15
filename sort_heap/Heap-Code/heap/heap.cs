@@ -122,22 +122,29 @@ public class min_heap<T> where T:IComparable<T>
 
     public void fix_child(int index)
     {
-        int chil1 = 2*index+1;
+        // compute index of childs of index.
+        int chil1 = 2*index+1; 
         int chil2 = 2*index+2;
+
+        // store A[index] in a  temp variable
         T temp = this.A[index];
-        if ( chil2 < this.A.Count )
+        if ( chil2 < this.A.Count ) // index have two children
         {
-            
+            // set variable child to menor of the two indexes.
             int child = chil2;
             if (this.A[chil1].CompareTo(this.A[chil2]) < 0)
             {
                 child = chil1;
             }
-            this.A[index] = this.A[child];
-            this.A[child] = temp;
-            fix_child(child);
+            if (this.A[child].CompareTo(this.A[index]) < 0)
+            {
+                this.A[index] = this.A[child];
+                this.A[child] = temp;
+                fix_child(child);
+            }
+
         }
-        else if (chil2 == this.A.Count)
+        else if (chil2 == this.A.Count) // have only left children
         {
             if (this.A[chil1].CompareTo(this.A[index]) < 0)
             {
@@ -182,26 +189,20 @@ public class program
     public static void Main()
     {
            
-        min_heap<int> X = new min_heap<int>(new List<int>());
+        min_heap<int> X = new min_heap<int>(new List<int>(){1,2,3,5,6,4});
         int len = X.A.Count;
         List<int> c = new List<int>();
-        for (int i = 0; i < len; i++)
+        for (int i = 0; i < 5; i++)
         {
+            int temp = X.extract_min();
             print_binary_tree.print(X.A.ToArray());
-            X.insert(i);
-            Console.Write("\n");
+            c.Add(temp);
         }
 
         foreach (var item in c)
         {
             Console.Write(item +" ");
         } 
-        List<int> a = idk.merge_k_list(new List<int>(), new List<int>());
-        foreach (var item in a)
-        {
-            Console.Write(item + " ");
-        }
-
 
     }
 }

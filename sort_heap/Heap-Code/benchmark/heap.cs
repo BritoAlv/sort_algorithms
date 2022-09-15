@@ -121,24 +121,31 @@ public class min_heap<T> where T:IComparable<T>
         }
     }
 
-    public void fix_child(int index)
+   public void fix_child(int index)
     {
-        int chil1 = 2*index+1;
+        // compute index of childs of index.
+        int chil1 = 2*index+1; 
         int chil2 = 2*index+2;
+
+        // store A[index] in a  temp variable
         T temp = this.A[index];
-        if ( chil2 < this.A.Count )
+        if ( chil2 < this.A.Count ) // index have two children
         {
-            
+            // set variable child to menor of the two indexes.
             int child = chil2;
             if (this.A[chil1].CompareTo(this.A[chil2]) < 0)
             {
                 child = chil1;
             }
-            this.A[index] = this.A[child];
-            this.A[child] = temp;
-            fix_child(child);
+            if (this.A[child].CompareTo(this.A[index]) < 0)
+            {
+                this.A[index] = this.A[child];
+                this.A[child] = temp;
+                fix_child(child);
+            }
+
         }
-        else if (chil2 == this.A.Count)
+        else if (chil2 == this.A.Count) // have only left children
         {
             if (this.A[chil1].CompareTo(this.A[index]) < 0)
             {
