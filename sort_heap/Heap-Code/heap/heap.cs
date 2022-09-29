@@ -1,16 +1,13 @@
-﻿/*
-1
-22
-33
-122333
-012345
-*/
+﻿public static class idk
+{
+    /////////////////////////////////////////////////////////////////////////////////////////////////
+    /// aplication of the heap to merge sorted lists. <summary>
+    /////////////////////////////////////////////////////////////////////////////////////////////////   
 
-public static class idk{
     /*
     merge list of same type of objects
     */
-    public static List<T> merge_k_list<T>(params List<T>[] lists) where T:IComparable
+    public static List<T> merge_k_list<T>(params List<T>[] lists) where T : IComparable
     {
         Dictionary<int, List<id_element<T>>> a = new Dictionary<int, List<id_element<T>>>();
         for (int i = 0; i < lists.Count(); i++)
@@ -35,7 +32,7 @@ public static class idk{
     /* 
     merge list of diferent type of objects.
     */
-    public static List<id_element<T>> merge_k_list<T>(Dictionary< int, List<id_element<T>>> lists) where T: IComparable
+    public static List<id_element<T>> merge_k_list<T>(Dictionary<int, List<id_element<T>>> lists) where T : IComparable
     {
         // takes k sorted lists of elements of id_element we use char to identifie the list,
         // so two elements in the same list have sAme char value.
@@ -59,13 +56,13 @@ public static class idk{
             if (lists[temp.id].Count > 0)
             {
                 b.insert(lists[temp.id][0]);
-            }            
+            }
         }
         return result;
     }
 }
 
-public class id_element<U>: IComparable<id_element<U>> where U:IComparable
+public class id_element<U> : IComparable<id_element<U>> where U : IComparable
 {
     public int id;
     public U val;
@@ -84,7 +81,21 @@ public class id_element<U>: IComparable<id_element<U>> where U:IComparable
 
 }
 
-public class min_heap<T> where T:IComparable<T>
+/////////////////////////////////////////////////////////////////////////////////////////////////
+/// aplication of the heap to merge sorted lists. 
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+/// the heap
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/*
+Given an array of objects of type T we can visualize them as a binary tree, this is a heap, now if we also add the property og
+that every father has to be less than its two childs, we get a min-heap.
+*/
+public class min_heap<T> where T : IComparable<T>
 {
     public List<T> A;
     public min_heap()
@@ -107,10 +118,10 @@ public class min_heap<T> where T:IComparable<T>
 
     public void fix_father(int index)
     {
-        int father = (index-1)/2;
-        if (father >=0)
+        int father = (index - 1) / 2;
+        if (father >= 0)
         {
-            if ( this.A[index].CompareTo(this.A[father]) < 0 )
+            if (this.A[index].CompareTo(this.A[father]) < 0)
             {
                 T temp = this.A[father];
                 this.A[father] = this.A[index];
@@ -123,12 +134,12 @@ public class min_heap<T> where T:IComparable<T>
     public void fix_child(int index)
     {
         // compute index of childs of index.
-        int chil1 = 2*index+1; 
-        int chil2 = 2*index+2;
+        int chil1 = 2 * index + 1;
+        int chil2 = 2 * index + 2;
 
         // store A[index] in a  temp variable
         T temp = this.A[index];
-        if ( chil2 < this.A.Count ) // index have two children
+        if (chil2 < this.A.Count) // index have two children
         {
             // set variable child to menor of the two indexes.
             int child = chil2;
@@ -156,7 +167,7 @@ public class min_heap<T> where T:IComparable<T>
         else
         {
             // doesnt have either left or right childs so we are done.
-        }    
+        }
     }
 
     public void insert(T val)
@@ -177,10 +188,73 @@ public class min_heap<T> where T:IComparable<T>
         else
         {
             this.A[0] = this.A.Last();
-            this.A.RemoveAt(this.A.Count-1);
+            this.A.RemoveAt(this.A.Count - 1);
             fix_child(0);
         }
         return temp;
+    }
+    public override string ToString()
+    {
+        string print<T>(T[] a) // to print an array as a binary tree, just pass the array as argument.
+        {
+            int cant_levels = (int)Math.Ceiling((Math.Log2(a.Length) + 0.000001));
+            string[,] bid = new string[2 * cant_levels - 1, 1 + 2 * ((int)Math.Pow(2, cant_levels) - 2)];
+            int espaciado = (1 == (int)Math.Pow(2, cant_levels - 1)) ? 0 : (int)Math.Pow(2, cant_levels - 1);
+            static void fill(string[,] arr, T[] a, int index_row, int index_column, int space, int ind)
+            {
+                // pos y is in the rows, pos x is in the columns
+                arr[index_row, index_column] = a[ind].ToString();
+                int start = index_column - space;
+                int end = index_column + space;
+                for (int i = start; i < index_column; i++)
+                {
+                    arr[index_row, i] = "-";
+                }
+                for (int i = index_column + 1; i <= end; i++)
+                {
+                    arr[index_row, i] = "-";
+                }
+                if (index_row + 1 < arr.GetLength(0))
+                {
+                    arr[index_row + 1, start] = "-";
+                    arr[index_row + 1, end] = "-";
+                }
+
+                // left child of index i in array a is 2*i+1
+                space = (space / 2 > 1) ? space / 2 : 0;
+                if (2 * ind + 1 < a.Length)
+                {
+                    fill(arr, a, index_row + 2, start, space, (2 * ind + 1));
+                }
+                if (2 * ind + 2 < a.Length)
+                {
+                    fill(arr, a, index_row + 2, end, space, (2 * ind + 2));
+                }
+            }
+            fill(bid, a, 0, (int)Math.Pow(2, cant_levels) - 2, espaciado, 0);
+            string result = "";
+            for (int i = 0; i < bid.GetLength(0); i++)
+            {
+                for (int j = 0; j < bid.GetLength(1); j++)
+                {
+                    if (String.IsNullOrEmpty(bid[i, j]))
+                    {
+                        result = result + " ";
+                    }
+                    else if (bid[i, j] == "-")
+                    {
+                        result = result + "-";
+                    }
+                    else
+                    {
+                        result = result + bid[i, j];
+                    }
+                }
+                result = result + "\n";
+            }
+            return result;
+        }
+        return print(this.A.ToArray());
     }
 }
 
@@ -188,21 +262,21 @@ public class program
 {
     public static void Main()
     {
-           
-        min_heap<int> X = new min_heap<int>(new List<int>(){1,2,3,5,6,4});
+
+        min_heap<int> X = new min_heap<int>(new List<int>() { 1, 2, 3, 5, 6, 4 });
         int len = X.A.Count;
         List<int> c = new List<int>();
         for (int i = 0; i < 5; i++)
         {
             int temp = X.extract_min();
-            print_binary_tree.print(X.A.ToArray());
+            Console.WriteLine(X);
             c.Add(temp);
         }
 
         foreach (var item in c)
         {
-            Console.Write(item +" ");
-        } 
+            Console.Write(item + " ");
+        }
 
     }
 }
