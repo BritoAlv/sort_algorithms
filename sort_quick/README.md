@@ -6,11 +6,9 @@ Para determinar la complejidad del algoritmo notemos  que un ejemplo  de su peor
 
 $T(n) = O(n) + 2*T(\frac{n}{2})$, la solución de esta recurrencia es $n\log_2{n}$ , observar el siguiente Tree: 
 
-
-
 Sea $m =\log_2{n}$ la parte entera de el logaritmo en base $2$ de $n$, entonces la altura del  árbol es $m+1$ y tiene $2^m$ leaves, notemos que en cada nivel del árbol el trabajo hecho es $cn$ donde $cn$ representa el $O(n)$ realizado por la función particionar. Esto es un análisis para el mejor de los casos (casi siempre debido a escoger un elemento random) que al escoger un elemento random podemos ver que genera un tiempo de $0.005 n\log_2{n}$ .
 
-Se tomó arreglos de enteros de tamaño $n$ generados aleatoriamente y el pivote es escogido de manera random para realizar el siguiente benchmark.
+Se tomó arreglos de enteros de tamaño $n$ generados aleatoriamente y el pivote es escogido de manera random para realizar el siguiente benchmark. El tiempo de ejecución sería de $0.005 n\log_2{n}$.
 
 | Función      | Tamaño (n) | Tiempo | Factor Constante $n\lg_2(n)$ | Bytes Memoria Total |
 |:------------:| ---------- | ------ | ---------------------------- |:-------------------:|
