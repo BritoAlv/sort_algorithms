@@ -1,9 +1,9 @@
 ﻿using BenchmarkDotNet.Attributes;
-using BenchmarkDotNet.Running;
+using BenchmarkDotNet.Columns;
 using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Exporters.Csv;
 using BenchmarkDotNet.Reports;
-using BenchmarkDotNet.Columns;
+using BenchmarkDotNet.Running;
 
 public class config : ManualConfig
 {
@@ -30,18 +30,13 @@ public class benchmark
     public matriz_cuadrada[] array_to_sort1;
     public int[] container0;
     public matriz_cuadrada[] container1;
-    [Params(10, 100, 1000, 10000, 20000, 30000, 40000, 50000 , 100000, 1000000, 10000000, 20000000)]
-    public int size {get; set ;}
+    [Params(1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000)]
+    public int size { get; set; }
     [GlobalSetup]
     public void Setup()
     {
         array_to_sort0 = random_utils.generate_array(size);
-        container0 = new int[size]; 
-    }
-    [IterationSetup]
-    public void IterationSetup()
-    {
-        container0 = (int[])array_to_sort0.Clone();
+        container0 = new int[size];
     }
     
     [Benchmark]

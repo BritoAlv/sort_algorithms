@@ -30,7 +30,7 @@ public class benchmark
     // public matriz_cuadrada[] array_to_sort1;
     public int[] container0;
     // public matriz_cuadrada[] container1;
-    [Params(10000,100000, 200000, 1000000)]
+    [Params(1000,2000,3000,4000,5000,6000,7000,8000,9000,10000)]
     public int size {get; set ;}
     [GlobalSetup]
     public void Setup()
