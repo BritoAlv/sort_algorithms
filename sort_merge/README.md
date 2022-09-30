@@ -1,14 +1,24 @@
 Esta carpeta se refiere al algoritmo de ordenación *Merge-Sort*:
 
-| Method      | size      | Mean            | Error        | StdDev       | Gen0         | Allocated      |
-| ----------- | --------- | ---------------:| ------------:| ------------:| ------------:| --------------:|
-| **merge_1** | **1000**  | **87.53 μs**    | **0.215 μs** | **0.201 μs** | **61.2793**  | **94.04 KB**   |
-| **merge_1** | **2000**  | **188.85 μs**   | **0.464 μs** | **0.411 μs** | **127.6855** | **195.95 KB**  |
-| **merge_1** | **3000**  | **294.78 μs**   | **1.013 μs** | **0.898 μs** | **199.2188** | **305.23 KB**  |
-| **merge_1** | **4000**  | **408.89 μs**   | **1.207 μs** | **1.129 μs** | **265.6250** | **407.57 KB**  |
-| **merge_1** | **5000**  | **524.10 μs**   | **0.920 μs** | **0.815 μs** | **340.8203** | **523.42 KB**  |
-| **merge_1** | **6000**  | **633.21 μs**   | **0.943 μs** | **0.787 μs** | **413.0859** | **633.95 KB**  |
-| **merge_1** | **7000**  | **751.47 μs**   | **1.408 μs** | **1.248 μs** | **484.3750** | **743.54 KB**  |
-| **merge_1** | **8000**  | **858.27 μs**   | **1.264 μs** | **0.987 μs** | **550.7813** | **846.45 KB**  |
-| **merge_1** | **9000**  | **980.23 μs**   | **1.180 μs** | **1.046 μs** | **630.8594** | **967.1 KB**   |
-| **merge_1** | **10000** | **1,107.19 μs** | **2.300 μs** | **2.151 μs** | **707.0313** | **1085.95 KB** |
+Este es un algoritmo **divide and conquer** de ordenación recursivo que posee una función merge auxiliar para realizar el proceso, consiste en tomar una lista de números, dividirla a la mitad, ordenar cada mitad y finalmente merge ambas mitadas en una lista final ordenada.
+
+Para determinar la complejidad del algoritmo notemos que es lo siguiente:
+
+$T(n) = O(n) + 2*T(\frac{n}{2})$, la solución de esta recurrencia es $n\log_2{n}$ , observar el siguiente Tree:
+
+Sea $m =\log_2{n}$ la parte entera de el logaritmo en base 2 de n, entonces la altura del árbol es $m+1$ y tiene $2^m$ leaves, notemos que en cada nivel del árbol el trabajo hecho es cn donde cn representa el $O(n)$ realizado por la función merge. Esto es un análisis 
+
+Podemos ver que obtenemos un tiempo de ejecución de $0.008n\log_2{n}$
+
+| Method  | Tamaño | Tiempo  | $\frac{Tiempo}{n \log_2{n}}$ | Memoria Usada |
+|:-------:| ------ | ------- |:----------------------------:| ------------- |
+| merge_1 | 1000   | 87.53   | 0.00878305184015609          | 96296         |
+| merge_1 | 2000   | 188.85  | 0.008610875204984            | 200648        |
+| merge_1 | 3000   | 294.78  | 0.00850680928477646          | 312552        |
+| merge_1 | 4000   | 408.89  | 0.00854290011988853          | 417352        |
+| merge_1 | 5000   | 524.1   | 0.00853047310697578          | 535977        |
+| merge_1 | 6000   | 633.21  | 0.00840866299070804          | 649161        |
+| merge_1 | 7000   | 751.47  | 0.00840457896883962          | 761385        |
+| merge_1 | 8000   | 858.27  | 0.00827437412535944          | 866761        |
+| merge_1 | 9000   | 980.23  | 0.00829147799119302          | 990314        |
+| merge_1 | 10000  | 1107.19 | 0.00833243502248008          | 1112010       |
