@@ -1,6 +1,10 @@
 # Heap-Sort:
 
-El heap-sort es un algoritmo de ordenación que se apoya de la estructura **heap**, un heap es una manera de visualizar una lista de objetos como un árbol binario, ahora si a este le añadimos la propiedad de que un nodo ha de ser menor que sus hijos tenemos un **min-heap**, para insertar elementos en este **min-heap** debemos además de ponerlos en el heap, en una posición que no viole las propiedades de este, notemos que la raíz de este árbol es el menor número entre todos, de ahí que el algoritmo de ordenación consiste en poner todos los elementos en el heap, y después extraerlos uno a uno, la operación de insertar tiene un coste logarítmico, al igual que la operación de extraer el menor elemento del **min-heap** puesto que en ambas hay que reajustar los elementos para no violar la propiedad, como son $n$ elementos tenemos un tiempo de ejecución de $0.015 n \log_2{n}$.
+El heap-sort es un algoritmo de ordenación que se apoya de la estructura **heap**, un heap es una manera de visualizar una lista de objetos como un árbol binario, ahora si a este le añadimos la propiedad de que un nodo ha de ser menor que sus hijos tenemos un **min-heap**: 
+
+<img title="" src="a.png" alt="" data-align="center" width="100%">
+
+Para insertar elementos en este **min-heap** debemos además de ponerlos en el heap, en una posición que no viole las propiedades de este, notemos que la raíz de este árbol es el menor número entre todos, de ahí que el algoritmo de ordenación consiste en poner todos los elementos en el heap, y después extraerlos uno a uno, la operación de insertar tiene un coste logarítmico, al igual que la operación de extraer el menor elemento del **min-heap** puesto que en ambas hay que reajustar los elementos para no violar la propiedad, como son $n$ elementos tenemos un tiempo de ejecución de $0.015 n \log_2{n}$.
 
 | Method | size  | Tiempo | $\frac{Tiempo}{n*\log_2{n}}$ | Allocated [B] |
 | ------ | ----- | ------ |:----------------------------:| ------------- |
