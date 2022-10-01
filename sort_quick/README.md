@@ -8,7 +8,7 @@ $T(n) = O(n) + 2*T(\frac{n}{2})$, la solución de esta recurrencia es $n\log_2{n
 
 <img title="" src="a.png" alt="" data-align="center" width="100%">
 
-Sea $m =\log_2{n}$ la parte entera de el logaritmo en base $2$ de $n$, entonces la altura del  árbol es $m+1$ y tiene $2^m$ leaves, notemos que en cada nivel del árbol el trabajo hecho es $cn$ donde $cn$ representa el $O(n)$ realizado por la función particionar. Esto es un análisis para el mejor de los casos (casi siempre debido a escoger un elemento random) que al escoger un elemento random podemos ver que genera un tiempo de $0.005 n\log_2{n}$ .
+Sea $m =\log_2{n}$ la parte entera de el logaritmo en base $2$ de $n$, entonces la altura del  árbol es $m+1$ y tiene $2^m$ leaves, notemos que en cada nivel del árbol el trabajo hecho es $cn$ donde $cn$ representa el $O(n)$ realizado por la función particionar. Esto es un análisis para el mejor de los casos (casi siempre debido a escoger un elemento random) que al escoger un elemento random podemos ver que genera un tiempo de $0.005 n\log_2{n}$ . Lo anterior fue para una situación ideal, donde en cada llamado recursivo se generan dos nuevos pivotes, pero esto puede no ser el caso, existen casos en los que siempre se genera un pivote, que implica que el algoritmo funcione prácticamente como un insertion-sort, esto es evitado usando elección random del pivote.
 
 Se tomó arreglos de enteros de tamaño $n$ generados aleatoriamente y el pivote es escogido de manera random para realizar el siguiente benchmark. El tiempo de ejecución sería de $0.005 n\log_2{n}$.
 
