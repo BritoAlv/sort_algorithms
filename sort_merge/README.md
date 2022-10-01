@@ -6,6 +6,8 @@ Para determinar la complejidad del algoritmo notemos que es lo siguiente:
 
 $T(n) = O(n) + 2*T(\frac{n}{2})$, la solución de esta recurrencia es $n\log_2{n}$ , observar el siguiente Tree:
 
+![](g12.png)
+
 Sea $m =\log_2{n}$ la parte entera de el logaritmo en base 2 de n, entonces la altura del árbol es $m+1$ y tiene $2^m$ leaves, notemos que en cada nivel del árbol el trabajo hecho es cn donde cn representa el $O(n)$ realizado por la función merge. Esto es un análisis 
 
 Podemos ver que obtenemos un tiempo de ejecución de $0.008n\log_2{n}$
