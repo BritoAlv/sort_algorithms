@@ -11,10 +11,3 @@ public static class random_utils
 		return values;
 	}
 }
-
-/* 
-int[] values = RandomUtils.generateArray(10);
-
-foreach (int entry in values)
-Console.WriteLine(entry);
- */

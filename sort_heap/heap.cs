@@ -193,6 +193,9 @@ public class min_heap<T> where T : IComparable<T>
         }
         return temp;
     }
+
+
+
     public override string ToString()
     {
         string print<T>(T[] a) // to print an array as a binary tree, just pass the array as argument.
@@ -255,6 +258,18 @@ public class min_heap<T> where T : IComparable<T>
             return result;
         }
         return print(this.A.ToArray());
+    }
+}
+
+public static class heap_sort
+{
+    public static void basic_0(int[] read)
+    {
+        min_heap<int> A = new min_heap<int>(read);
+        for (int i = 0; i < read.Length; i++)
+        {
+            read[i] = A.extract_min();            
+        }
     }
 }
 

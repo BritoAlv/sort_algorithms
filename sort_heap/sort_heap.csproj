@@ -7,8 +7,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="BenchmarkDotNet" Version="0.13.1" />
-  </ItemGroup>
+      <ItemGroup>
+    <ProjectReference Include="..\assets\assets.csproj" />
+    </ItemGroup>
 
 </Project>

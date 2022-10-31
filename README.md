@@ -27,3 +27,27 @@ El siguiente gráfico muestra el tiempo de ejecución de cada uno de los algorit
 - Faltan más algoritmos de ordenación.
 
 - Aprender a interpretar los resultados de BenchMarkDotNet en el lenguaje R para poder mejorar la visualización de los resultados.
+
+## Pasos Para Añadir Un Nuevo Algoritmo:
+
+```bash
+dotnet new console -n sort_name
+dotnet sln add sort_name/sort_name.csproj
+cd sort_name
+dotnet add benchmark/benchmark.csproj reference sort_name/sort_name.csproj
+dotnet add sort_name/sort_name.csproj reference assets/assets.csproj
+```
+
+## Para ejecutarlo:
+
+Desde la carpeta principal se puede usar el siguiente código:
+
+```bash
+dotnet run --project sort_name
+```
+
+En otro caso ejecutar desde la carpeta deseada.
+
+## Benchmark:
+
+Para hacerle un benchmark a un algoritmo en específico, comentar los demás y crear una método con el atributo Benchmark, como está hecho con las demas funciones.

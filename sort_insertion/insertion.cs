@@ -1,7 +1,7 @@
 ﻿// implementations of insertion sort.
 public static class insertion_sort
 {
-    public static void swaps_0(int[] source)
+    public static void basic_0(int[] source)
     /* 
     The thing is that inside the while there are three constant operations.
     */
@@ -38,7 +38,7 @@ public static class insertion_sort
     }
 
 
-    public static void binary_search_0(int[] source)
+    public static void basic_1(int[] source)
     {
         for (int i = 1; i < source.Length; i++) // n-1 iterations, so O(n)
         {
