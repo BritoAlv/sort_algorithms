@@ -51,3 +51,7 @@ En otro caso ejecutar desde la carpeta deseada.
 ## Benchmark:
 
 Para hacerle un benchmark a un algoritmo en específico, comentar los demás y crear una método con el atributo Benchmark, como está hecho con las demas funciones.
+
+## Futuro:
+
+Este repositorio debe ser un template para testear algoritmos de ordenación.
